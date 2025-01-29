@@ -61,6 +61,7 @@ main {
     flex-wrap: wrap; /* Allows sections to stack on smaller screens */
     opacity: 0;
     animation: fadeIn 1s ease-out 1s forwards; /* Fade-in for main content */
+    position: relative;
 }
 
 .card.resume {
@@ -79,7 +80,7 @@ main {
     z-index: 1000; /* Keep it on top */
     transition: all 0.3s ease; /* Smooth transition for hover */
     opacity: 0; /* Make sure it starts hidden */
-    animation: fadeIn 5s ease-out 5s forwards;
+    animation: fadeIn 5s ease-out forwards;
 }
 
 /* Links inside the resume card */
