@@ -7,7 +7,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Broken-Top-Aerial-Sunrise-Web-scaled.jpg);;
+    background: url(Broken-Top-Aerial-Sunrise-Web-scaled.jpg) no-repeat center center fixed,
+    rgba(0, 0, 0, 0.5); /* Fixing background for Safari */
+    background-size: cover;
     color: #e0e0e0;
     flex-direction: column;
 }
@@ -42,7 +44,6 @@ header {
         opacity: 1;
     }
 }
-
 
 /* Main content sections */
 main {
@@ -129,4 +130,16 @@ footer {
 
 footer p {
     animation: fadeIn 3.5s ease-in-out;
+}
+
+/* Safari Fixes */
+
+/* Ensure flex layout works as expected in Safari */
+body, main {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Add 'will-change' property to optimize animations for Safari */
+header, #headshot, main, .card {
+    will-change: opacity, transform;
 }
