@@ -1,147 +1,132 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap');
-
-/* Body Styling */
+/* General Body Styles */
 body {
-    background-image: linear-gradient(to top, white, lavender);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Broken-Top-Aerial-Sunrise-Web-scaled.jpg);;
+    color: #e0e0e0;
+    flex-direction: column;
 }
 
-/* Footer Styling */
-footer {
-    background-image: linear-gradient(to top, lavender, white);
-    padding: 20px;
+/* Header Styles */
+header {
+    font-size: 2rem;
+    font-weight: bold;
     text-align: center;
-    margin-top: 40px;
-}
-
-/* Header Navigation */
-header nav {
-    background-color: dimgray;
-    position: sticky;
-    top: 0;
-    padding: 10px;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 5px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: text-decoration 0.3s ease;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-
-
-/* Title Name */
-.title-name {
-    font-family: 'Merriweather', serif;
+    color: #e0e0e0;
     opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeIn 2.5s forwards;
-    text-align: center;
+    animation: fadeIn 1s ease-out forwards; /* Fade-in animation for the header */
 }
 
+/* Styling for the headshot */
+#headshot {
+    width: 160px; /* Adjust size of the headshot */
+    height: 160px; /* Ensure it's a square */
+    border: 2px solid slategrey;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensures the image covers the entire area */
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Fade and scale-up animation */
+}
+
+/* Animation for fade-in effect */
 @keyframes fadeIn {
-    100% {
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
-/* Headshot Image Hover Effect */
-.headshot img {
-    transition: transform 0.3s ease-in-out;
-}
 
-.headshot img:hover {
-    transform: scale(1.1);
-}
-
-#contact form {
+/* Main content sections */
+main {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: 20px auto;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    flex-wrap: wrap; /* Allows sections to stack on smaller screens */
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards; /* Fade-in for main content */
 }
 
-#contact label {
-    font-weight: bold;
+/* Card Styles */
+.card {
+    background-color: #2c2c2c; /* Darker card background */
+    border: 2px solid slategray;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    width: 250px;
+    max-width: 100%;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+    color: #e0e0e0;
+    transform: translateY(20px); /* Start cards below */
+    opacity: 0;
+    animation: cardAnimation 1.0s ease-out forwards;
 }
 
-#contact input, #contact textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.card:nth-child(1) {
+    animation-delay: 1.5s;
 }
 
-#contact button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.card:nth-child(2) {
+    animation-delay: 2s;
 }
 
-#contact button:hover {
-    background-color: #0056b3;
+.card:nth-child(3) {
+    animation-delay: 2.5s;
 }
 
-
-
-footer form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto;
+/* Hover effect for cards */
+.card:hover {
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
-footer label {
-    font-weight: bold;
+/* Card animation */
+@keyframes cardAnimation {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-footer input, footer textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Social Media Icons */
+.social-links {
+    margin-top: 1rem;
 }
 
-footer button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.social-icon {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
-footer button:hover {
-    background-color: #0056b3;
+.social-icon:hover {
+    color: whitesmoke; /* LinkedIn Blue */
+}
+
+/* Footer Styles */
+footer {
+    position: absolute;
+    bottom: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
 }
 
 footer p {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #333;
+    animation: fadeIn 3.5s ease-in-out;
 }
-
