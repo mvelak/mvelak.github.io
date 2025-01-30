@@ -7,8 +7,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url(Broken-Top-Aerial-Sunrise-Web-scaled.jpg) no-repeat center center fixed,
-    rgba(0, 0, 0, 0.5);
+    background: rgb(25,25,28);
+    background: -moz-linear-gradient(51deg, rgba(25,25,28,1) 0%, rgba(9,9,19,1) 51%, rgba(155,163,151,1) 100%, rgba(9,9,121,1) 100%, rgba(3,2,53,1) 100%);
+    background: -webkit-linear-gradient(51deg, rgba(25,25,28,1) 0%, rgba(9,9,19,1) 51%, rgba(155,163,151,1) 100%, rgba(9,9,121,1) 100%, rgba(3,2,53,1) 100%);
+    background: linear-gradient(51deg, rgba(25,25,28,1) 0%, rgba(9,9,19,1) 51%, rgba(155,163,151,1) 100%, rgba(9,9,121,1) 100%, rgba(3,2,53,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#19191c",endColorstr="#030235",GradientType=1);
     background-size: cover;
     color: #e0e0e0;
     flex-direction: column;
